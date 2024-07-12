@@ -1,0 +1,24 @@
+<h2>Edit Password</h2>
+
+<%= form_with(model: current_user, url: account_password_path, html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: current_user %>
+
+  <div class="field">
+    <%= f.label :current_password %><br />
+    <%= f.password_field :current_password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
