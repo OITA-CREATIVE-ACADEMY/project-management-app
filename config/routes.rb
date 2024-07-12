@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+    controllers: {
+      registrations: "users/registrations"
+    }
+
+  namespace :account do
+    resource :password
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :projects do
     resources :tasks
